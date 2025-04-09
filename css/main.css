@@ -13,7 +13,7 @@ nav ul, footer ul {
 
 nav ul li, footer ul li {
     display: inline;
-    margin-right: 20px;
+    margin-right: 25px;
 }
 
 a {
@@ -39,7 +39,10 @@ p {
 }
 
 .container {
-    text-align: center;
+    text-align: center
+    padding: 2em;
+    background-color: #f9f9f9;
+    border-radius: 10px;;
 }
 
 footer {
