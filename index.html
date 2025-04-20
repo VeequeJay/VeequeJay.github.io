@@ -1,37 +1,105 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VeequeJay Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0f0f0f;
+      color: #f5f5f5;
+      scroll-behavior: smooth;
+    }
+    nav {
+      background-color: #1c1c1c;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li a {
+      color: #f5f5f5;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #00ffc8;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      opacity: 0;
+      transition: opacity 1s ease-in;
+    }
+    h2 {
+      border-bottom: 2px solid #00ffc8;
+      padding-bottom: 0.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #1c1c1c;
+      color: #888;
+    }
+  </style>
+</head>
 <body>
-    <head>
-        <div class="blurb">
-            <h1>Hi there, I'm Victor Oyindamola Julius!</h1>
-            <p>I'm a Data Professional.<strong>I bring Data to Life!</strong> - <a href="/about">Read more about my life...</a></p>
-        </div>
-    <head>
-    
-    <section class="intro">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hello! I'm a passionate and driven professional with expertise in data science, financial analysis, machine learning, and business intelligence. With a strong foundation in analytical thinking and problem-solving, I help businesses turn data into actionable insights and make smarter decisions.</p>
 
-        <p>Throughout my career, I’ve worked on diverse projects ranging from financial modeling, option pricing, and Monte Carlo simulations, to building sophisticated Power BI dashboards and developing financial chatbots. I specialize in delivering impactful results through technical solutions and data-driven strategies.</p>
-    </section>
+  <nav>
+    <ul>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#cv">CV</a></li>
+    </ul>
+  </nav>
 
-    <section class="services">
-        <h2>What I Do</h2>
-        <ul>
-            <li><strong>Data Science & Machine Learning</strong>: Using Python, and advanced techniques to develop predictive models, improve processes, and derive valuable insights from data.</li>
-            <li><strong>Financial Analysis & Modeling</strong>: Working with complex financial scenarios, risk management, and creating powerful forecasting models.</li>
-            <li><strong>Business Intelligence & Power BI</strong>: Designing intuitive, high-impact dashboards that transform raw data into strategic decision-making tools.</li>
-            <li><strong>Financial Technology Solutions</strong>: Developing smart solutions for financial management, such as chatbots and real-time data integration tools.</li>
-        </ul>
-    </section>
+  <section id="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>Write a short professional bio here. Who you are, what you do, what you’re passionate about.</p>
+  </section>
 
-    <section class="projects">
-        <h2>Explore My Projects</h2>
-        <p>Feel free to explore my projects, where you can see a mix of industry experience and my commitment to delivering quality results. Let’s collaborate on creating innovative solutions that drive growth and success!</p>
-    </section>
+  <section id="projects" data-aos="fade-up">
+    <h2>Projects</h2>
+    <p>Showcase your most impressive work—apps, dashboards, research, etc.</p>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 Victor Oyindamola Julius. All rights reserved.</p>
-    </footer>
+  <section id="blog" data-aos="fade-up">
+    <h2>Blog</h2>
+    <p>This section links to posts from your <code>_posts</code> folder in Jekyll. Auto-generated on your GitHub Pages site.</p>
+  </section>
+
+  <section id="contact" data-aos="fade-up">
+    <h2>Contact</h2>
+    <p>Email: your.email@example.com<br>LinkedIn: linkedin.com/in/yourname</p>
+  </section>
+
+  <section id="cv" data-aos="fade-up">
+    <h2>CV</h2>
+    <p><a href="cv.pdf" target="_blank" style="color: #00ffc8;">Download My CV</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 VeequeJay. Built with 💙 on GitHub Pages.
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+  </script>
 </body>
+</html>
