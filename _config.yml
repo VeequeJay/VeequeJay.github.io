@@ -1,2 +1,28 @@
-name: Victor Oyindamola Julius, Data Analyst/Scientist
+title: VeequeJay Portfolio
+email: your.email@example.com
+description: >
+  A dope portfolio for a passionate and skilled creator.
+baseurl: "" 
+url: "https://veequejay.github.io"
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
 markdown: kramdown
+kramdown:
+  input: GFM
+
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+sass:
+  style: compressed
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
