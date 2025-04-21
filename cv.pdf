@@ -1,0 +1,38 @@
+---
+layout: default
+title: CV
+---
+
+<section id="cv" style="padding: 4rem 2rem; max-width: 800px; margin: auto; color: #f5f5f5;">
+  <h2 style="color: #00ffc8; border-bottom: 2px solid #00ffc8; padding-bottom: 0.5rem;">Curriculum Vitae</h2>
+
+  <p><a href="/cv.pdf" target="_blank" style="color: #00ffc8; font-weight: bold;">Download PDF Version</a></p>
+
+  <h3 style="margin-top: 2rem;">👤 Personal Information</h3>
+  <ul>
+    <li><strong>Name:</strong> VeequeJay</li>
+    <li><strong>Email:</strong> your.email@example.com</li>
+    <li><strong>Location:</strong> Lagos, Nigeria</li>
+    <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourname" style="color: #00ffc8;">linkedin.com/in/yourname</a></li>
+  </ul>
+
+  <h3 style="margin-top: 2rem;">💼 Work Experience</h3>
+  <ul>
+    <li><strong>Financial Analyst – XYZ Corp</strong><br><em>2022 – Present</em><br>Responsible for building financial dashboards, modeling scenarios, and providing key strategic insights to management.</li>
+    <li><strong>Data Analyst – ABC Ltd</strong><br><em>2020 – 2022</em><br>Built machine learning-powered reporting pipelines and automated Excel-based management reports.</li>
+  </ul>
+
+  <h3 style="margin-top: 2rem;">🎓 Education</h3>
+  <ul>
+    <li><strong>MSc Financial Engineering</strong> – Top University<br><em>2018 – 2020</em></li>
+    <li><strong>BSc Accounting</strong> – University of Lagos<br><em>2012 – 2016</em></li>
+  </ul>
+
+  <h3 style="margin-top: 2rem;">🛠️ Skills</h3>
+  <ul>
+    <li>Python, SQL, Excel, Power BI</li>
+    <li>Financial Modeling, Derivatives Pricing</li>
+    <li>Machine Learning, Jekyll, GitHub Pages</li>
+  </ul>
+
+</section>
