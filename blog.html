@@ -95,23 +95,23 @@
     </nav>
   </header>
 
-  <section id="blog">
-    <h2>Blog</h2>
-    <ul>
-  {% for post in site.posts %}
-    <li class="blog-card">
-      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-      <small>{{ post.date | date: "%B %d, %Y" }}</small>
-      <p>{{ post.excerpt }}</p>
-      <a href="{{ post.url }}">Read more →</a>
-    </li>
-    {% unless forloop.last %}
-      <hr style="border: none; border-top: 1px solid #333; margin: 2rem 0;" />
-    {% endunless %}
-  {% endfor %}
-</ul>
+  <div class="blog-container">
+    <h1 class="section-title">Blog</h1>
+    <hr class="section-divider" />
 
-  </section>
+    {% for post in site.posts %}
+      <div class="blog-post">
+        <h2>{{ post.title }}</h2>
+        <p><small>{{ post.date | date: "%B %d, %Y" }}</small></p>
+        <p>{{ post.excerpt }}</p>
+        <p><a href="{{ post.url }}">Read more →</a></p>
+      </div>
+
+      {% unless forloop.last %}
+        <hr class="post-divider" />
+      {% endunless %}
+    {% endfor %}
+  </div>
 
   <footer>
     <p>&copy; {{ site.time | date: "%Y" }} Victor Oyindamola Julius</p>
