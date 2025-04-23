@@ -1,5 +1,5 @@
 ---
-layout: 
+layout: none
 title: "Victor Oyindamola Julius, Data Analyst/Scientist.  Launch Site"
 date: 2025-04-09
 ---
