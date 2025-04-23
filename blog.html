@@ -1,100 +1,73 @@
+---
+layout: none
+title: Blog
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>{{ site.title }} | Blog</title>
+  <meta charset="UTF-8">
+  <title>Blog | {{ site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      margin: 0;
       background-color: #121212;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #f5f5f5;
-    }
-
-    header {
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #1e1e1e;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
-    }
-
-    nav a {
-      margin-left: 1rem;
-      color: #00ffc8;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    section#blog {
-      max-width: 900px;
-      margin: 4rem auto;
-      padding: 0 2rem;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      color: #00ffc8;
-      border-bottom: 2px solid #00ffc8;
-      padding-bottom: 0.5rem;
-      margin-bottom: 2rem;
-    }
-
-    li.blog-card {
-      background: #1e1e1e;
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      list-style: none;
-    }
-
-    li.blog-card h3 {
-      margin-top: 0;
-      font-size: 1.5rem;
-    }
-
-    li.blog-card a {
-      color: #00ffc8;
-      text-decoration: none;
-    }
-
-    li.blog-card p {
-      margin: 1rem 0 0.5rem;
-      color: #ccc;
-    }
-
-    small {
-      color: #aaa;
-    }
-
-    footer {
-      text-align: center;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      margin: 0;
       padding: 2rem;
+    }
+
+    .blog-container {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      color: #00ffe0;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-divider {
+      height: 2px;
+      background-color: #00ffe0;
+      border: none;
+      margin-bottom: 2rem;
+    }
+
+    .blog-post {
       background-color: #1e1e1e;
-      color: #777;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 10px rgba(0,255,224,0.05);
+    }
+
+    .blog-post h2 {
+      margin-top: 0;
+      color: #00ffe0;
+    }
+
+    .blog-post small {
+      color: #a0a0a0;
+    }
+
+    .blog-post a {
+      color: #00ffe0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .post-divider {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 2rem 0;
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <div><a href="/" style="color: #00ffc8; font-weight: bold; text-decoration: none;">← Home</a></div>
-    <nav>
-      <a href="/about">About</a>
-      <a href="/cv">CV</a>
-      <a href="/projects">Projects</a>
-      <a href="/blog">Blog</a>
-      <a href="/contact">Contact</a>
-    </nav>
-  </header>
-
   <div class="blog-container">
     <h1 class="section-title">Blog</h1>
     <hr class="section-divider" />
@@ -112,10 +85,5 @@
       {% endunless %}
     {% endfor %}
   </div>
-
-  <footer>
-    <p>&copy; {{ site.time | date: "%Y" }} Victor Oyindamola Julius</p>
-  </footer>
-
 </body>
 </html>
