@@ -9,10 +9,10 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #0d0d0d;
       color: #f5f5f5;
+      line-height: 1.8;
       padding: 2rem;
       max-width: 800px;
       margin: auto;
-      line-height: 1.8;
     }
     a {
       color: #00ffc8;
@@ -21,14 +21,42 @@
     a:hover {
       text-decoration: underline;
     }
-    header {
+    header, footer {
       margin-bottom: 2rem;
     }
     hr {
-      border: 0;
+      border: none;
       height: 1px;
       background: #333;
       margin: 2rem 0;
+    }
+    .tags {
+      margin-top: 1rem;
+    }
+    .tags span {
+      background-color: #1a1a1a;
+      color: #00ffc8;
+      padding: 0.2rem 0.6rem;
+      margin-right: 0.5rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    .toc {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: #1c1c1c;
+      border-left: 4px solid #00ffc8;
+    }
+    .toc h3 {
+      margin-top: 0;
+      color: #00ffc8;
+    }
+    .toc ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .toc ul li {
+      margin-bottom: 0.3rem;
     }
   </style>
 </head>
@@ -37,13 +65,45 @@
   <header>
     <a href="/" style="color: #00ffc8;">← Home</a>
     <h1>{{ page.title }}</h1>
-    <p style="color: #999;">Published on {{ page.date | date: "%B %d, %Y" }}</p>
+    <p style="color: #888;">
+      Published on {{ page.date | date: "%B %d, %Y" }} • 
+      {% assign words = page.content | number_of_words %}
+      {% assign reading_time = words | divided_by:200 %}
+      {{ reading_time | ceil }} min read
+    </p>
+
+    {% if page.tags %}
+      <div class="tags">
+        {% for tag in page.tags %}
+          <span>{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
     <hr />
   </header>
+
+  {% if page.toc %}
+  <div class="toc">
+    <h3>Table of Contents</h3>
+    {{ page.toc }}
+  </div>
+  {% endif %}
 
   <main>
     {{ content }}
   </main>
+
+  <footer>
+    <hr />
+    <div style="display: flex; justify-content: space-between;">
+      {% if page.previous %}
+        <a href="{{ page.previous.url }}">← {{ page.previous.title }}</a>
+      {% endif %}
+      {% if page.next %}
+        <a href="{{ page.next.url }}">{{ page.next.title }} →</a>
+      {% endif %}
+    </div>
+  </footer>
 
 </body>
 </html>
