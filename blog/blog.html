@@ -1,0 +1,89 @@
+---
+layout: none
+title: Blog
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog | {{ site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    .blog-container {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      color: #00ffe0;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-divider {
+      height: 2px;
+      background-color: #00ffe0;
+      border: none;
+      margin-bottom: 2rem;
+    }
+
+    .blog-post {
+      background-color: #1e1e1e;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 10px rgba(0,255,224,0.05);
+    }
+
+    .blog-post h2 {
+      margin-top: 0;
+      color: #00ffe0;
+    }
+
+    .blog-post small {
+      color: #a0a0a0;
+    }
+
+    .blog-post a {
+      color: #00ffe0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .post-divider {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 2rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="blog-container">
+    <h1 class="section-title">Blog</h1>
+    <hr class="section-divider" />
+
+    {% for post in site.posts %}
+      <div class="blog-post">
+        <h2>{{ post.title }}</h2>
+        <p><small>{{ post.date | date: "%B %d, %Y" }}</small></p>
+        <p>{{ post.excerpt }}</p>
+        <p><a href="{{ post.url }}">Read more →</a></p>
+      </div>
+
+      {% unless forloop.last %}
+        <hr class="post-divider" />
+      {% endunless %}
+    {% endfor %}
+  </div>
+</body>
+</html>
