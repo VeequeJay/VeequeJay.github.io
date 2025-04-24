@@ -1,11 +1,11 @@
-- title: Sample Project 1
-  description: A brief overview of what this project is about.
-  url: https://github.com/yourprofile/project1
+- title: Machine Learning Dashboard
+  description: A dashboard for visualizing ML model performance using Power BI.
+  url: https://github.com/yourusername/ml-dashboard
 
-- title: Sample Project 2
-  description: Another cool thing you built.
-  url: https://github.com/yourprofile/project2
+- title: Financial Analytics Tool
+  description: Built with Python and Streamlit to simulate financial models.
+  url: https://github.com/yourusername/finance-tool
 
-- title: Sample Project 3
-  description: You can list any other side gig, tool, or portfolio piece.
-  url: https://github.com/yourprofile/project3
+- title: Portfolio Website
+  description: A personal site built with Jekyll and deployed on GitHub Pages.
+  url: https://veequejay.github.io
