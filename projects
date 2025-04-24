@@ -1,0 +1,19 @@
+---
+layout: default
+title: Projects
+---
+
+<section id="all-projects" style="padding: 4rem 2rem; max-width: 1000px; margin: auto;">
+  <h2 style="color: #00ffc8; border-bottom: 2px solid #00ffc8; padding-bottom: 0.5rem;">All Projects</h2>
+  <div style="display: grid; gap: 2rem;">
+    {% for project in site.data.projects %}
+      <div style="background-color: #1e1e1e; padding: 1.5rem; border-radius: 10px;">
+        <h3 style="margin-bottom: 0.5rem; color: #f5f5f5;">{{ project.title }}</h3>
+        <p style="color: #ccc;">{{ project.description }}</p>
+        {% if project.url %}
+        <a href="{{ project.url }}" style="color: #00ffc8;">View Project →</a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
