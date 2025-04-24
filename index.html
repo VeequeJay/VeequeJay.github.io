@@ -110,43 +110,24 @@
   </section>
 
 
-<section id="projects" style="padding: 4rem 2rem; max-width: 1000px; margin: auto; color: #f5f5f5;" data-aos="fade-up">
-  <h2 style="color: #00ffc8; border-bottom: 2px solid #00ffc8; padding-bottom: 0.5rem;">Projects</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
-    
-    <div style="background: #1e1e1e; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px rgba(0,255,200,0.2);">
-      <h3 style="margin-top: 0; color: #00ffc8;">Project One</h3>
-      <p>A short description of the project and what it does. Great for adding GitHub or live demo links.</p>
-      <p style="font-size: 0.9em; color: #999;">Tech: Python, Flask, MongoDB</p>
-      <a href="#" style="color: #00ffc8; text-decoration: underline;">View on GitHub</a>
-    </div>
-    
-    <div style="background: #1e1e1e; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px rgba(0,255,200,0.2);">
-      <h3 style="margin-top: 0; color: #00ffc8;">Project Two</h3>
-      <p>Another placeholder project. You can easily swap in your own description and link when ready.</p>
-      <p style="font-size: 0.9em; color: #999;">Tech: Power BI, SQL, Excel</p>
-      <a href="#" style="color: #00ffc8; text-decoration: underline;">Live Demo</a>
-    </div>
-
-    <div style="background: #1e1e1e; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px rgba(0,255,200,0.2);">
-      <h3 style="margin-top: 0; color: #00ffc8;">Project Three</h3>
-      <p>A short description of the project and what it does. Great for adding GitHub or live demo links.</p>
-      <p style="font-size: 0.9em; color: #999;">Tech: Python, Flask, MongoDB</p>
-      <a href="#" style="color: #00ffc8; text-decoration: underline;">View on GitHub</a>
-    </div>
-    
-    <div style="background: #1e1e1e; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px rgba(0,255,200,0.2);">
-      <h3 style="margin-top: 0; color: #00ffc8;">Project Four</h3>
-      <p>Another placeholder project. You can easily swap in your own description and link when ready.</p>
-      <p style="font-size: 0.9em; color: #999;">Tech: Power BI, SQL, Excel</p>
-      <a href="#" style="color: #00ffc8; text-decoration: underline;">Live Demo</a>
-    </div>
-    
+<section id="about" data-aos="fade-up">
+    <h2 style="color: #00ffc8; border-bottom: 2px solid #00ffc8; padding-bottom: 0.5rem;">Featured Projects</h2>
+  <div style="display: grid; gap: 2rem;">
+    {% for project in site.data.projects limit:3 %}
+      <div style="background-color: #1e1e1e; padding: 1rem; border-radius: 8px;">
+        <h3 style="margin-bottom: 0.5rem; color: #f5f5f5;">{{ project.title }}</h3>
+        <p style="color: #ccc;">{{ project.description }}</p>
+        {% if project.url %}
+        <a href="{{ project.url }}" style="color: #00ffc8;">View Project →</a>
+        {% endif %}
+      </div>
+    {% endfor %}
   </div>
+  <a href="/projects" style="color: #00ffc8; display: inline-block; margin-top: 1rem;">See all projects →</a>
 </section>
 
-<section id="blog" style="padding: 4rem 2rem;">
-  <h2 style="color: #00ffc8; border-bottom: 2px solid #00ffc8; padding-bottom: 0.5rem;">Latest Blog Posts</h2>
+<section id="about" data-aos="fade-up">
+    <h2 style="color: #00ffc8; border-bottom: 2px solid #00ffc8; padding-bottom: 0.5rem;">Latest Blog Posts</h2>
   <ul style="list-style: none; padding: 0;">
     {% for post in site.posts limit:3 %}
       <li style="margin-bottom: 2rem;">
@@ -160,6 +141,7 @@
   </ul>
   <a href="/blog" style="color: #00ffc8;">View all posts →</a>
 </section>
+
 
 
   <section id="contact" style="padding: 4rem 2rem; max-width: 1000px; margin: auto; color: #f5f5f5;" data-aos="fade-up">
