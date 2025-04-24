@@ -114,7 +114,7 @@ Title: Home
   <!-- ==== PROJECTS SECTION ==== -->
 <section id="project" data-aos="fade-up">
     <h2 style="color: #00ffc8; border-bottom: 2px solid #00ffc8; padding-bottom: 0.5rem;">Featured Projects</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
     {% assign featured_projects = site.data.projects | slice: 0, 4 %}
     {% for project in featured_projects %}
     <div style="background: #1a1a1a; padding: 1.5rem; border-radius: 10px;">
