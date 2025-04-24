@@ -111,41 +111,48 @@ Title: Home
     </p>
   </section>
 
-
-<!-- ==== FEATURED PROJECTS SECTION ==== -->
-  
-<section id="projects" data-aos="fade-up">
+  <!-- ==== PROJECTS SECTION ==== -->
+<section id="projects" style="padding: 4rem 2rem; background: #111; color: #f5f5f5;">
   <h2 style="color: #00ffc8; border-bottom: 2px solid #00ffc8; padding-bottom: 0.5rem;">Featured Projects</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
-    {% assign projects = site.data.projects | slice: 0, 3 %}
-    {% for project in projects %}
-      <div style="background: #222; padding: 1rem; border-radius: 0.5rem; flex: 1 1 calc(33% - 2rem); min-width: 250px;">
-        <h3 style="color: #f5f5f5;">{{ project.title }}</h3>
-        <p style="color: #aaa;">{{ project.description }}</p>
-        {% if project.url %}
-          <a href="{{ project.url }}" target="_blank" style="color: #00ffc8;">View Project →</a>
-        {% endif %}
-      </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
+    {% assign featured_projects = site.data.projects | slice: 0, 3 %}
+    {% for project in featured_projects %}
+    <div style="background: #1a1a1a; padding: 1.5rem; border-radius: 10px;">
+      {% if project.image %}
+      <img src="{{ project.image }}" alt="{{ project.title }}" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
+      {% endif %}
+      <h3 style="margin-bottom: 0.5rem; color: #00ffc8;">{{ project.title }}</h3>
+      <p style="margin-bottom: 0.5rem;">{{ project.description }}</p>
+      <a href="{{ project.url }}" target="_blank" style="color: #00ffc8; text-decoration: underline;">View Project</a>
+    </div>
     {% endfor %}
   </div>
-  <p style="margin-top: 1rem;"><a href="/portfolio" style="color: #00ffc8;">View all projects →</a></p>
+  <div style="text-align: center; margin-top: 2rem;">
+    <a href="/projects" style="color: #00ffc8; text-decoration: underline;">View All Projects →</a>
+  </div>
 </section>
 
-<!-- ==== BLOG PREVIEW SECTION ==== -->
-  
-<section id="blog" data-aos="fade-up">
+<!-- ==== BLOG SECTION ==== -->
+<section id="blog" style="padding: 4rem 2rem; background: #0f0f0f; color: #f5f5f5;">
   <h2 style="color: #00ffc8; border-bottom: 2px solid #00ffc8; padding-bottom: 0.5rem;">Latest Blog Posts</h2>
-  <ul style="list-style: none; padding: 0;">
-    {% for post in site.posts limit: 3 %}
-      <li style="margin-bottom: 2rem; border-bottom: 1px solid #333; padding-bottom: 1rem;">
-        <h3><a href="{{ post.url }}" style="color: #f5f5f5;">{{ post.title }}</a></h3>
-        <small style="color: #888;">{{ post.date | date: "%B %d, %Y" }}</small>
-        <p>{{ post.excerpt }}</p>
-      </li>
+  <div style="margin-top: 2rem;">
+    {% assign latest_posts = site.posts | slice: 0, 3 %}
+    {% for post in latest_posts %}
+    <article style="margin-bottom: 2rem; border-bottom: 1px solid #333; padding-bottom: 1rem;">
+      <h3 style="margin-bottom: 0.5rem;">
+        <a href="{{ post.url }}" style="color: #00ffc8; text-decoration: none;">{{ post.title }}</a>
+      </h3>
+      <small style="color: #888;">{{ post.date | date: "%B %d, %Y" }}</small>
+      <p>{{ post.excerpt }}</p>
+    </article>
     {% endfor %}
-  </ul>
-  <p><a href="/blog" style="color: #00ffc8;">View all posts →</a></p>
+  </div>
+  <div style="text-align: center; margin-top: 2rem;">
+    <a href="/blog" style="color: #00ffc8; text-decoration: underline;">View All Posts →</a>
+  </div>
 </section>
+
+
 
 
 <!-- ==== CONTACT SECTION ==== -->
