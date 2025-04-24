@@ -113,7 +113,7 @@
 <section id="projects" data-aos="fade-up">
     <h2 style="color: #00ffc8; border-bottom: 2px solid #00ffc8; padding-bottom: 0.5rem;">Featured Projects</h2>
       <div style="display: grid; gap: 2rem;">
-    {% for project in site.data.projects limit:3 %}
+    {% for project in site.projects limit:3 %}
       <div style="background-color: #1e1e1e; padding: 1rem; border-radius: 8px;">
         <h3 style="margin-bottom: 0.5rem; color: #f5f5f5;">{{ project.title }}</h3>
         <p style="color: #ccc;">{{ project.description }}</p>
@@ -123,7 +123,7 @@
       </div>
     {% endfor %}
   </div>
-  <a href="/projects/" style="color: #00ffc8; display: inline-block; margin-top: 1rem;">See all projects →</a>
+  <a href="/projects" style="color: #00ffc8; display: inline-block; margin-top: 1rem;">See all projects →</a>
 </section>
 
 <section id="blog" data-aos="fade-up">
