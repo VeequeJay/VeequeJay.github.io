@@ -111,8 +111,8 @@
 
 <!-- ==== FEATURED PROJECTS SECTION ==== -->
   
-<section id="projects" style="margin-top: 4rem;">
-  <h2 style="color: #00ffc8;">Featured Projects</h2>
+<section id="projects" data-aos="fade-up">
+  <h2 style="color: #00ffc8; border-bottom: 2px solid #00ffc8; padding-bottom: 0.5rem;">Featured Projects</h2>
   <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
     {% assign projects = site.data.projects | slice: 0, 3 %}
     {% for project in projects %}
@@ -130,8 +130,8 @@
 
 <!-- ==== BLOG PREVIEW SECTION ==== -->
   
-<section id="blog-preview" style="margin-top: 4rem;">
-  <h2 style="color: #00ffc8;">Latest Blog Posts</h2>
+<section id="blog" data-aos="fade-up">
+  <h2 style="color: #00ffc8; border-bottom: 2px solid #00ffc8; padding-bottom: 0.5rem;">Latest Blog Posts</h2>
   <ul style="list-style: none; padding: 0;">
     {% for post in site.posts limit: 3 %}
       <li style="margin-bottom: 2rem; border-bottom: 1px solid #333; padding-bottom: 1rem;">
