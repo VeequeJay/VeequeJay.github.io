@@ -414,18 +414,6 @@ a {
     AOS.init({ once: true });
   </script>
 
-<!-- ====For Menu ==== --> 
-<script>
-  // Open sidebar
-  document.getElementById("menu-toggle").onclick = function() {
-    document.getElementById("sidebar").style.width = "250px";
-  };
-
-  // Close sidebar
-  document.getElementById("close-btn").onclick = function() {
-    document.getElementById("sidebar").style.width = "0";
-  };
-</script>
 
 
 
@@ -449,6 +437,19 @@ a {
     document.documentElement.setAttribute('data-theme', mode);
     toggleButton.textContent = (mode === 'dark') ? '🌙' : '☀️';
   }
+</script>
+  
+<!-- ====For Menu ==== --> 
+<script>
+  // Open sidebar
+  document.getElementById("menu-toggle").onclick = function() {
+    document.getElementById("sidebar").style.width = "250px";
+  };
+
+  // Close sidebar
+  document.getElementById("close-btn").onclick = function() {
+    document.getElementById("sidebar").style.width = "0";
+  };
 </script>
 
 
