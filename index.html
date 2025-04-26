@@ -102,21 +102,27 @@ a {
   </nav>
 
   <header style="background-color: #000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 999;">
-  <a href="/" style="color: #00ffc8; font-weight: bold; font-size: 1.5rem; text-decoration: none;">VeequeJay</a>
+    <a href="/" style="color: #00ffc8; font-weight: bold; font-size: 1.5rem; text-decoration: none;">VeequeJay</a>
 
   <!-- Hamburger Toggle -->
   <div id="menu-toggle" onclick="toggleMenu()" style="cursor: pointer; font-size: 1.5rem; color: #00ffc8; display: none;">
     <i class="fas fa-bars"></i>
   </div>
 
-  <!-- Navigation Menu -->
-  <nav id="navbar" style="display: flex; gap: 1.5rem; align-items: center;">
-    <a href="#about" style="color: #00ffc8; text-decoration: none;">About</a>
-    <a href="#projects" style="color: #00ffc8; text-decoration: none;">Projects</a>
-    <a href="/blog" style="color: #00ffc8; text-decoration: none;">Blog</a>
-    <a href="#contact" style="color: #00ffc8; text-decoration: none;">Contact</a>
-    <a href="#cv" style="color: #00ffc8; text-decoration: none;">CV</a>
-  </nav>
+<!-- Navigation Menu -->
+  <button id="menu-toggle" aria-label="Toggle Menu" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--accent);">
+  ☰
+</button>
+  <nav id="mobile-menu" style="position: fixed; top: 0; right: -100%; width: 250px; height: 100%; background: var(--bg-color); color: var(--text-color); box-shadow: -2px 0 8px rgba(0,0,0,0.5); transition: right 0.3s ease; padding: 2rem;">
+  <ul style="list-style: none; padding: 0;">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#cv">CV</a></li>
+  </ul>
+</nav>
+
 <button id="theme-toggle" aria-label="Toggle Light/Dark Mode"
   style="background: none; border: none; color: #00ffc8; font-size: 1.2rem; cursor: pointer;">
   🌙
@@ -128,6 +134,7 @@ a {
   <nav style="display: flex; justify-content: space-between; align-items: center;">
     <h1 style="color: #00ffc8;">VeequeJay</h1>
     <ul style="display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0;">
+      <li><a href="#home" style=\"color: #f5f5f5; text-decoration: none;\">Home</a></li>
       <li><a href="#about" style=\"color: #f5f5f5; text-decoration: none;\">About</a></li>
       <li><a href="#projects" style=\"color: #f5f5f5; text-decoration: none;\">Projects</a></li>
       <li><a href="/blog" style=\"color: #f5f5f5; text-decoration: none;\">Blog</a></li>
@@ -136,6 +143,7 @@ a {
     </ul>
   </nav>
 </header>
+  
 <!-- ==== HOME SECTION ==== -->
   <section id="home" style="height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(145deg, #0f0f0f, #1a1a1a); text-align: center; color: #f5f5f5; padding: 2rem;" data-aos="fade-in">
   <img src="https://media.licdn.com/dms/image/v2/C4D03AQEdUXJXRIY25g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1661231747689?e=1750896000&v=beta&t=3AimLahiE1AV1BFWxgl9rSlqDcUsqBE_jVcdUzYqR7o" alt="Your Picture" style="width: 250px; height: 250px; border-radius: 50%; border: 4px solid #00ffc8; margin-bottom: 1.5rem;">
@@ -206,6 +214,15 @@ a {
   <div style="max-width: 1000px; margin: auto; display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-around;">
 
     <!-- Skill Item -->
+  
+    <div style="flex: 1 1 250px;">
+      <i class="fas fa-file-excel" style="font-size: 2rem; color: #00ffc8;"></i>
+      <h4 style="color: #fff;">Microsoft Excel</h4>
+      <div style="background-color: #333; border-radius: 10px;">
+        <div style="width: 95%; background-color: #00ffc8; padding: 5px 0; border-radius: 10px;"></div>
+      </div>
+    </div>
+  
     <div style="flex: 1 1 250px;">
       <i class="fab fa-python" style="font-size: 2rem; color: #00ffc8;"></i>
       <h4 style="color: #fff;">Python</h4>
@@ -376,44 +393,20 @@ a {
     AOS.init({ once: true });
   </script>
 
-<!-- ==== For The Menu Button  ==== -->
-  <script>
-  function toggleMenu() {
-    const nav = document.getElementById("navbar");
-    nav.style.display = nav.style.display === "flex" ? "none" : "flex";
-  }
+<!-- ====For Menu ==== --> 
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
 
-  // Optional: Hide menu on mobile by default
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 768) {
-      document.getElementById("navbar").style.display = "flex";
+  menuToggle.addEventListener('click', () => {
+    if (mobileMenu.style.right === "0px") {
+      mobileMenu.style.right = "-100%";
     } else {
-      document.getElementById("navbar").style.display = "none";
+      mobileMenu.style.right = "0px";
     }
   });
 </script>
 
-<style>
-  @media (max-width: 768px) {
-    #navbar {
-      display: none;
-      flex-direction: column;
-      align-items: flex-start;
-      background-color: #000;
-      width: 100%;
-      padding: 1rem 2rem;
-    }
-
-    #menu-toggle {
-      display: block;
-    }
-
-    #navbar a {
-      padding: 0.5rem 0;
-      width: 100%;
-    }
-  }
-</style>
 
 <!-- ====For Light and Dark Button ==== -->
 <script>
