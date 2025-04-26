@@ -91,38 +91,38 @@ a {
 <body>
 
 
-<header style="position: sticky; top: 0; background: #121212; padding: 1rem 2rem; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.5);">
-  <nav style="display: flex; justify-content: space-between; align-items: center;">
-    <h1 style="color: #00ffc8;">VeequeJay</h1>
-    <ul style="display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0;">
-      <li><a href="#home" style=\"color: #f5f5f5; text-decoration: none;\">Home</a></li>
-      <li><a href="#about" style=\"color: #f5f5f5; text-decoration: none;\">About</a></li>
-      <li><a href="#projects" style=\"color: #f5f5f5; text-decoration: none;\">Projects</a></li>
-      <li><a href="/blog" style=\"color: #f5f5f5; text-decoration: none;\">Blog</a></li>
-      <li><a href="#contact" style=\"color: #f5f5f5; text-decoration: none;\">Contact</a></li>
-      <li><a href="#cv" style=\"color: #f5f5f5; text-decoration: none;\">CV</a></li>
-    </ul>
-  </nav>
-</header>
+<header style="background-color: #121212; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.5);">
+  <!-- Logo -->
+  <a href="/" style="color: #00ffc8; font-weight: bold; font-size: 1.5rem; text-decoration: none;">VeequeJay</a>
 
-<header style="background-color: #000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 999;">
-    <a href="/" style="color: #00ffc8; font-weight: bold; font-size: 1.5rem; text-decoration: none;">VeequeJay</a>
+  <!-- Normal Menu Links (Desktop Only) -->
+  <ul id="desktop-menu" style="display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0;">
+    <li><a href="#home" style="color: #f5f5f5; text-decoration: none;">Home</a></li>
+    <li><a href="#about" style="color: #f5f5f5; text-decoration: none;">About</a></li>
+    <li><a href="#projects" style="color: #f5f5f5; text-decoration: none;">Projects</a></li>
+    <li><a href="/blog" style="color: #f5f5f5; text-decoration: none;">Blog</a></li>
+    <li><a href="#contact" style="color: #f5f5f5; text-decoration: none;">Contact</a></li>
+    <li><a href="#cv" style="color: #f5f5f5; text-decoration: none;">CV</a></li>
+  </ul>
 
-  <!-- Hamburger Toggle -->
-  <div id="menu-toggle" onclick="toggleMenu()" style="cursor: pointer; font-size: 1.5rem; color: #00ffc8; display: none;">
-    <i class="fas fa-bars"></i>
+  <!-- Hamburger Icon (Mobile Only) -->
+  <div id="menu-button" style="font-size: 2rem; color: #00ffc8; cursor: pointer; display: none;">
+    ☰
   </div>
 
-<!-- Navigation Menu -->
-  <!-- Menu Button -->
-<div id="menu-button" style="font-size: 2rem; color: #00ffc8; cursor: pointer;">☰</div>
+  <!-- Light/Dark Toggle -->
+  <button id="theme-toggle" aria-label="Toggle Light/Dark Mode"
+    style="background: none; border: none; color: #00ffc8; font-size: 1.2rem; cursor: pointer; margin-left: 1rem;">
+    🌙
+  </button>
+</header>
 
-<!-- Sidebar Navigation -->
+<!-- Sidebar Navigation (hidden until ☰ clicked) -->
 <nav id="sidebar" style="
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1000;
+  z-index: 1500;
   top: 0;
   left: 0;
   background-color: #111;
@@ -138,20 +138,15 @@ a {
     color: #00ffc8;
     text-decoration: none;
   ">&times;</a>
-  
-  <a href="#about" style="padding: 8px 8px 8px 32px; text-decoration: none; color: #00ffc8; display: block;">About</a>
-  <a href="#projects" style="padding: 8px 8px 8px 32px; text-decoration: none; color: #00ffc8; display: block;">Projects</a>
-  <a href="/blog" style="padding: 8px 8px 8px 32px; text-decoration: none; color: #00ffc8; display: block;">Blog</a>
-  <a href="#contact" style="padding: 8px 8px 8px 32px; text-decoration: none; color: #00ffc8; display: block;">Contact</a>
-  <a href="#cv" style="padding: 8px 8px 8px 32px; text-decoration: none; color: #00ffc8; display: block;">CV</a>
+
+  <a href="#home" style="padding: 8px 32px; text-decoration: none; color: #00ffc8; display: block;">Home</a>
+  <a href="#about" style="padding: 8px 32px; text-decoration: none; color: #00ffc8; display: block;">About</a>
+  <a href="#projects" style="padding: 8px 32px; text-decoration: none; color: #00ffc8; display: block;">Projects</a>
+  <a href="/blog" style="padding: 8px 32px; text-decoration: none; color: #00ffc8; display: block;">Blog</a>
+  <a href="#contact" style="padding: 8px 32px; text-decoration: none; color: #00ffc8; display: block;">Contact</a>
+  <a href="#cv" style="padding: 8px 32px; text-decoration: none; color: #00ffc8; display: block;">CV</a>
 </nav>
 
-<!-- Light/Dark -->
-<button id="theme-toggle" aria-label="Toggle Light/Dark Mode"
-  style="background: none; border: none; color: #00ffc8; font-size: 1.2rem; cursor: pointer;">
-  🌙
-</button>
-</header>
 
 
   
@@ -415,7 +410,22 @@ a {
   document.getElementById("close-btn").onclick = function() {
     document.getElementById("sidebar").style.width = "0";
   };
+
+  // Responsive Menu Show/Hide
+  function checkScreenSize() {
+    if (window.innerWidth <= 768) {
+      document.getElementById('desktop-menu').style.display = 'none';
+      document.getElementById('menu-button').style.display = 'block';
+    } else {
+      document.getElementById('desktop-menu').style.display = 'flex';
+      document.getElementById('menu-button').style.display = 'none';
+    }
+  }
+
+  window.onload = checkScreenSize;
+  window.onresize = checkScreenSize;
 </script>
+
 
 
 <!-- ====For Light and Dark Button ==== -->
