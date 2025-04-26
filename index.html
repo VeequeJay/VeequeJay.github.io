@@ -85,36 +85,60 @@ body {
 a {
   color: var(--accent);
 }
+/* Sidebar Links */
+.sidebar-link {
+  color: #00ffc8;
+  text-decoration: none;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
+.sidebar-link:hover {
+  color: #ffffff;
+  transform: translateX(10px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  #desktop-nav {
+    display: none;
+  }
+  #menu-toggle {
+    display: block;
+  }
+}
   </style>
 </head>
 <body>
 
 
 <!-- HEADER -->
+<!-- HEADER -->
 <header style="position: sticky; top: 0; background: #121212; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.5);">
-  <a href="/" style="color: #00ffc8; font-size: 1.8rem; font-weight: bold; text-decoration: none;">VeequeJay</a>
+  <a href="/" style="color: #00ffc8; font-size: 2rem; font-weight: bold; text-decoration: none;">VeequeJay</a>
 
   <!-- Navigation links (desktop) -->
   <nav id="desktop-nav" style="display: flex; gap: 2rem;">
-    <a href="#home" style="color: #f5f5f5; text-decoration: none;">Home</a>
-    <a href="#about" style="color: #f5f5f5; text-decoration: none;">About</a>
-    <a href="#projects" style="color: #f5f5f5; text-decoration: none;">Projects</a>
-    <a href="/blog" style="color: #f5f5f5; text-decoration: none;">Blog</a>
-    <a href="#contact" style="color: #f5f5f5; text-decoration: none;">Contact</a>
-    <a href="#cv" style="color: #f5f5f5; text-decoration: none;">CV</a>
+    <a href="#home" style="color: #f5f5f5; text-decoration: none; font-size: 1.2rem; font-weight: 500;">Home</a>
+    <a href="#about" style="color: #f5f5f5; text-decoration: none; font-size: 1.2rem; font-weight: 500;">About</a>
+    <a href="#projects" style="color: #f5f5f5; text-decoration: none; font-size: 1.2rem; font-weight: 500;">Projects</a>
+    <a href="/blog" style="color: #f5f5f5; text-decoration: none; font-size: 1.2rem; font-weight: 500;">Blog</a>
+    <a href="#contact" style="color: #f5f5f5; text-decoration: none; font-size: 1.2rem; font-weight: 500;">Contact</a>
+    <a href="#cv" style="color: #f5f5f5; text-decoration: none; font-size: 1.2rem; font-weight: 500;">CV</a>
   </nav>
 
   <!-- Menu button (mobile) -->
-  <div id="menu-toggle" style="font-size: 2rem; color: #00ffc8; cursor: pointer; display: none;">☰</div>
+  <div id="menu-toggle" style="font-size: 2.5rem; color: #00ffc8; cursor: pointer; display: none;">☰</div>
 
   <!-- Light/Dark toggle -->
-  <button id="theme-toggle" style="background: none; border: none; color: #00ffc8; font-size: 1.5rem; margin-left: 1rem; cursor: pointer;">
+  <button id="theme-toggle" style="background: none; border: none; color: #00ffc8; font-size: 1.8rem; margin-left: 1rem; cursor: pointer;">
     🌙
   </button>
 </header>
 
-<!-- SIDEBAR (hidden by default) -->
+<!-- SIDEBAR -->
 <div id="sidebar" style="
   height: 100%;
   width: 0;
@@ -124,20 +148,21 @@ a {
   background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
+  padding-top: 70px;
   z-index: 1200;
 ">
   <a href="javascript:void(0)" id="close-btn" style="position: absolute; top: 20px; right: 25px; font-size: 3rem; color: #00ffc8; text-decoration: none;">&times;</a>
   
-  <div style="display: flex; flex-direction: column; margin-top: 40px; padding-left: 30px;">
-    <a href="#home" style="color: #00ffc8; text-decoration: none; margin-bottom: 20px; font-size: 1.5rem;">Home</a>
-    <a href="#about" style="color: #00ffc8; text-decoration: none; margin-bottom: 20px; font-size: 1.5rem;">About</a>
-    <a href="#projects" style="color: #00ffc8; text-decoration: none; margin-bottom: 20px; font-size: 1.5rem;">Projects</a>
-    <a href="/blog" style="color: #00ffc8; text-decoration: none; margin-bottom: 20px; font-size: 1.5rem;">Blog</a>
-    <a href="#contact" style="color: #00ffc8; text-decoration: none; margin-bottom: 20px; font-size: 1.5rem;">Contact</a>
-    <a href="#cv" style="color: #00ffc8; text-decoration: none; margin-bottom: 20px; font-size: 1.5rem;">CV</a>
+  <div style="display: flex; flex-direction: column; align-items: flex-start; margin-top: 40px; padding-left: 40px;">
+    <a href="#home" class="sidebar-link">Home</a>
+    <a href="#about" class="sidebar-link">About</a>
+    <a href="#projects" class="sidebar-link">Projects</a>
+    <a href="/blog" class="sidebar-link">Blog</a>
+    <a href="#contact" class="sidebar-link">Contact</a>
+    <a href="#cv" class="sidebar-link">CV</a>
   </div>
 </div>
+
 
 <div>  </div>
 
@@ -395,30 +420,17 @@ a {
 
 <!-- ====For Menu ==== --> 
 <script>
-  // Open the sidebar
-  document.getElementById("menu-button").onclick = function() {
+  // Open sidebar
+  document.getElementById("menu-toggle").onclick = function() {
     document.getElementById("sidebar").style.width = "250px";
   };
 
-  // Close the sidebar
+  // Close sidebar
   document.getElementById("close-btn").onclick = function() {
     document.getElementById("sidebar").style.width = "0";
   };
-
-  // Responsive Menu Show/Hide
-  function checkScreenSize() {
-    if (window.innerWidth <= 768) {
-      document.getElementById('desktop-menu').style.display = 'none';
-      document.getElementById('menu-button').style.display = 'block';
-    } else {
-      document.getElementById('desktop-menu').style.display = 'flex';
-      document.getElementById('menu-button').style.display = 'none';
-    }
-  }
-
-  window.onload = checkScreenSize;
-  window.onresize = checkScreenSize;
 </script>
+
 
 
 
