@@ -110,19 +110,39 @@ a {
   </div>
 
 <!-- Navigation Menu -->
-  <button id="menu-toggle" aria-label="Toggle Menu" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--accent);">
-  ☰
-</button>
-  <nav id="mobile-menu" style="position: fixed; top: 0; right: -100%; width: 250px; height: 100%; background: var(--bg-color); color: var(--text-color); box-shadow: -2px 0 8px rgba(0,0,0,0.5); transition: right 0.3s ease; padding: 2rem;">
-  <ul style="list-style: none; padding: 0;">
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="/blog">Blog</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#cv">CV</a></li>
-  </ul>
+  <!-- Menu Button -->
+<div id="menu-button" style="font-size: 2rem; color: #00ffc8; cursor: pointer;">☰</div>
+
+<!-- Sidebar Navigation -->
+<nav id="sidebar" style="
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+">
+  <a href="javascript:void(0)" id="close-btn" style="
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 2rem;
+    color: #00ffc8;
+    text-decoration: none;
+  ">&times;</a>
+  
+  <a href="#about" style="padding: 8px 8px 8px 32px; text-decoration: none; color: #00ffc8; display: block;">About</a>
+  <a href="#projects" style="padding: 8px 8px 8px 32px; text-decoration: none; color: #00ffc8; display: block;">Projects</a>
+  <a href="/blog" style="padding: 8px 8px 8px 32px; text-decoration: none; color: #00ffc8; display: block;">Blog</a>
+  <a href="#contact" style="padding: 8px 8px 8px 32px; text-decoration: none; color: #00ffc8; display: block;">Contact</a>
+  <a href="#cv" style="padding: 8px 8px 8px 32px; text-decoration: none; color: #00ffc8; display: block;">CV</a>
 </nav>
 
+<!-- Light/Dark -->
 <button id="theme-toggle" aria-label="Toggle Light/Dark Mode"
   style="background: none; border: none; color: #00ffc8; font-size: 1.2rem; cursor: pointer;">
   🌙
@@ -395,16 +415,15 @@ a {
 
 <!-- ====For Menu ==== --> 
 <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
+  // Open the sidebar
+  document.getElementById("menu-button").onclick = function() {
+    document.getElementById("sidebar").style.width = "250px";
+  };
 
-  menuToggle.addEventListener('click', () => {
-    if (mobileMenu.style.right === "0px") {
-      mobileMenu.style.right = "-100%";
-    } else {
-      mobileMenu.style.right = "0px";
-    }
-  });
+  // Close the sidebar
+  document.getElementById("close-btn").onclick = function() {
+    document.getElementById("sidebar").style.width = "0";
+  };
 </script>
 
 
