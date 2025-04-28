@@ -14,3 +14,7 @@
 - title: Portfolio App
   description: A personal site built with Jekyll and deployed on GitHub Pages.
   url: https://veequejay.github.io
+  
+- title: Shoe Ordering App
+  description: An Ordering app built using Microsoft Power Apps.
+  url: https://apps.powerapps.com/play/e/1bc83a46-0c2a-e03e-84b3-16321bcdb902/a/eb01f55a-e4b1-4c60-8dbc-96925be88061?tenantId=57ce3504-0075-47af-b8ce-423ce894cb8f&hint=66a38d3b-b035-4fb9-9cdd-fc1bc659d32e&sourcetime=1745839328106
