@@ -21,4 +21,4 @@
   
 - title: Insurance Coverage Analysis
   description: An simple power BI report created for the purpose of analyzing insurance claim frequency by several variables especially demographics.
-  url: https://app.powerbi.com/view?r=eyJrIjoiOWI5ZDk0ZDYtNjg3Mi00ZDVkLWE5MmMtNDMwNGRkM2ZjMDc4IiwidCI6Ijk2YzM0NTFjLTBkYjgtNGYxOS04OGFmLTVjYjA2YzBhNDNmZSJ9
+  url: https://app.powerbi.com/reportEmbed?reportId=178e6db2-563d-4789-b96b-b9126c8bf7a0&autoAuth=true&ctid=96c3451c-0db8-4f19-88af-5cb06c0a43fe
