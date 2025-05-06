@@ -1,18 +1,6 @@
 
-- title: Machine Learning Dashboard
-  description: A dashboard for visualizing ML model performance using Power BI.
-  url: https://github.com/yourusername/ml-dashboard
-
-- title: Financial Analytics Tool
-  description: Built with Python and Streamlit to simulate financial models.
-  url: https://github.com/yourusername/finance-tool
-
-- title: Portfolio Website
-  description: A personal site built with Jekyll and deployed on GitHub Pages.
-  url: https://veequejay.github.io
-
 - title: Portfolio App
-  description: A personal site built with Jekyll and deployed on GitHub Pages.
+  description: Oh yes! This site was built by, my one and only self!!!  Feel free explore.
   url: https://veequejay.github.io
   
 - title: Shoe Ordering App
@@ -22,3 +10,6 @@
 - title: Insurance Coverage Analysis
   description: An simple power BI report created for the purpose of analyzing insurance claim frequency by several variables especially demographics.
   url: https://app.powerbi.com/reportEmbed?reportId=178e6db2-563d-4789-b96b-b9126c8bf7a0&autoAuth=true&ctid=96c3451c-0db8-4f19-88af-5cb06c0a43fe
+  
+- title: SpaceX Project
+  description: This project was a composition of several task ranging from various aspect of the machine learning process. Some of these includes scraping web data, Data exploration and visualization. I created a web app usuig Dash. Proceeded to craeting ML models for accurate prediction with respects to landing success or failure!
