@@ -1,7 +1,7 @@
 
 - title: Portfolio App
   description: Oh yes! This site was built by, my one and only self!!!  Feel free explore.
-  url: https://veequejay.github.io
+  url:https://github.com/VeequeJay.github.io
   
 - title: Shoe Ordering App
   description: An Ordering app built using Microsoft Power Apps.
@@ -13,3 +13,5 @@
   
 - title: SpaceX Project
   description: This project was a composition of several task ranging from various aspect of the machine learning process. Some of these includes scraping web data, Data exploration and visualization. I also created a web dashboard using Dash. Proceeded to creating ML models for accurate prediction with respects to landing success or failure!
+  url: https://github.com/VeequeJay/Applied-Data-Science-Project
+  
